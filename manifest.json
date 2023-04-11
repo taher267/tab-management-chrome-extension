@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Manage Tabs Ex",
+  "version": "1.0.0",
+  "description": "Managing Tab",
+  "permissions": ["storage", "tabs", "scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["index.js"],
+      "run_at":"document_start"
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": { "default_popup": "popup.html"}
+}
