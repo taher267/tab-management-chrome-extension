@@ -1,1 +1,0 @@
-console.log("hello world from pages/main/index.html's main js")

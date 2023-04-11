@@ -9,10 +9,17 @@ window.addEventListener("DOMContentLoaded", function () {
             tabEl.innerText = tab.title;
             if (tab.active) tabEl.classList.add("active");
             tabEl.classList.add("tabLi");
+            tabEl.addEventListener("dblclick", () => {
+                chrome.tabs.remove(tab.id);
+            });
+
             tabEl.addEventListener("click", function () {
                 chrome.tabs.update(tab.id, { active: true });
-                // window.close()
+                window.close();
             });
+
+
+
             OlTabs.appendChild(tabEl);
         });
     });
