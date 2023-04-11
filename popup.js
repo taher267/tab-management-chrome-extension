@@ -13,14 +13,14 @@ window.addEventListener("DOMContentLoaded", function () {
                 chrome.tabs.remove(tab.id);
             });
 
-            tabEl.addEventListener("click", function () {
-                chrome.tabs.update(tab.id, { active: true });
-                window.close();
-            });
-
-
+            tabEl.addEventListener("click", () => changeTab(tab.id));
 
             OlTabs.appendChild(tabEl);
         });
     });
 });
+
+function changeTab(id) {
+    chrome.tabs.update(id, { active: true });
+    window.close();
+}
